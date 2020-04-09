@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+.hidden{
+  display: none;
+}
+
+.controls-box {
+  display: flex;
+  background-color: aqua;
+  justify-content: space-evenly;
+  height: 70px;
+  align-items: center;
+}
+
+.grid-box{
+  margin: auto;
+  height: 450px;
+  background-color: brown;
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  background-color: chartreuse;
+  height: 350px;
+  width: 462px;
+  display: flex;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+}
+
+.grid div{
+  border: 2px solid white;
+  border-radius: 10px;
+  flex-grow: 1;
+  width: 66px;
+  height: 50px;
+}
+
+.grid div.arsenal{
+  background-image: url(../assets/Arsenal\ logo.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.grid div.tottenham{
+  background-image: url(../assets/Tottenham\ logo.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.team-button{
+  display: block;
+}

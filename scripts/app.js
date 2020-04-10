@@ -4,7 +4,9 @@ function init() {
   const startBtn = document.querySelector('#start')
   const teamBtns = document.querySelectorAll('.team-button')
   const cells = []
-  // const fields = document.querySelectorAll('.field')
+  let fields = document.querySelectorAll('.grid div')
+
+  
  
  
 
@@ -42,8 +44,14 @@ function init() {
   }
 
   //Function when hovering over Divs
-  function hoverBoard() {
-    console.log('working')
+  function hoverBoard(event) {
+    // console.log('works', event.target.textContent)
+    fields = event.target.classList.add('test')
+    // console.log(fields.textContent)
+  }
+
+  function hoverOut(event) {
+    fields = event.target.classList.remove('test')
   }
 
   // EVENT LISTENERS
@@ -53,7 +61,11 @@ function init() {
   })
 
   grids.addEventListener('mouseover', hoverBoard)
+  grids.addEventListener('mouseout', hoverOut)
 
+  // fields.forEach(field =>{
+  //   field.addEventListener('mouseover', hoverBoard)
+  // })
 
   createCells()
   

@@ -29,8 +29,8 @@ body {
 }
 
 .grid {
-  background-color: chartreuse;
-  height: 350px;
+  /* background-color: chartreuse; */
+  height: 305px;
   width: 462px;
   display: flex;
   margin: auto;
@@ -44,7 +44,7 @@ body {
 
 .grid div{
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: 20%;
   flex-grow: 1;
   width: 66px;
   height: 50px;

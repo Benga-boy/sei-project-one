@@ -1,48 +1,61 @@
 function init() {
   // DOM ELEMENTS
-  const grid = document.querySelector('.grid')
+  const grids = document.querySelector('.grid')
   const startBtn = document.querySelector('#start')
   const teamBtns = document.querySelectorAll('.team-button')
   const cells = []
+  // const fields = document.querySelectorAll('.field')
+ 
+ 
 
-  console.log(teamBtns)
-
-  // GRADE VARIABLES
+  // GRID VARIABLES
   const width = 7
-  const cellCount = width * width
+  const cellCount = width * 6
+
+  // PLAYER VARIABLES
+  // const player = 0
+  // const pc = 0
 
 
   //FUNCTIONS
   function createCells() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      grid.appendChild(cell)
+      grids.appendChild(cell)
       cell.textContent = i
       cells.push(cell)
+      // cells.forEach(cell => {
+      //   cell.classList.add('field')
+      // })
     }
   }
-
+  // * Function to start the game
   function gameStart() {
     console.log('start game')
     startBtn.classList.add('hidden')
   }
 
-
-  function teamSelect(){
-    const arsenal = document.querySelector('#gooner')
-    console.log(arsenal)
-    const tottenham = document.querySelector('#spurs')
-    console.log(tottenham)
+  // * Team selection function
+  function teamSelect(event){
+    const arsenal = event.target.value
+    const tottenham = event.target.value
   }
 
+  //Function when hovering over Divs
+  function hoverBoard() {
+    console.log('working')
+  }
 
-  createCells()
-
-  // EVENT LISTENER
+  // EVENT LISTENERS
   startBtn.addEventListener('click', gameStart)
   teamBtns.forEach(btn => {
     btn.addEventListener('click', teamSelect)
   })
+
+  grids.addEventListener('mouseover', hoverBoard)
+
+
+  createCells()
   
 }
 

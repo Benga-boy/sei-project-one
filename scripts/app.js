@@ -11,12 +11,13 @@ function init() {
   const cellCount = width * 6
 
   // PLAYER CHOICE VARIABLES
-  // * I want a player to be able to select between two teams, depending on who the player picks, the computer automatically picks opposite
+  // * Allows player to pick which team they want to be. Choice will be added fields class
   let player
   
 
 
   //FUNCTIONS
+  // * Creates the playing grids - 6 by 7
   function createCells() {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
@@ -25,6 +26,7 @@ function init() {
       cells.push(cell)
     }
   }
+
   // * Function to start the games
   function gameStart() {
     console.log('start game')
@@ -40,29 +42,30 @@ function init() {
     }
   }
 
-  //Function when hovering over Divs
-  function hoverBoardArsenal(event) {
+  //Function when hovering over the grids
+  function hoverBoard(event) {
     fields = event.target.classList.add('football')
   }
 
-  function hoverOutArsenal(event) {
+  function hoverOut(event) {
     fields = event.target.classList.remove('football')
   }
 
-  // ON CLICK
+  // Function to add team logo to board
 
   function onCellClick(event) {
-    fields = event.target.classList.add(player)
+    fields = event.target.classList.add(player)  // - added from player choice variable depending on team selection
   }
 
   // EVENT LISTENERS
-  startBtn.addEventListener('click', gameStart)
+  startBtn.addEventListener('click', gameStart) // - starts the game 
+  
   teamBtns.forEach(btn => {
-    btn.addEventListener('click', teamSelect)
+    btn.addEventListener('click', teamSelect) // event listener for team selection
   })
 
-  grids.addEventListener('mouseover',  hoverBoardArsenal)
-  grids.addEventListener('mouseout', hoverOutArsenal)
+  grids.addEventListener('mouseover',  hoverBoard)
+  grids.addEventListener('mouseout', hoverOut)
   grids.addEventListener('click', onCellClick)
 
   createCells()

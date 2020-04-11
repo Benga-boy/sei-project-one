@@ -7,6 +7,10 @@ body {
   margin: 0;
 }
 
+label {
+  color: #ff1e56;
+}
+
 .hidden{
   display: none;
 }
@@ -22,7 +26,8 @@ body {
 .grid-box{
   margin: auto;
   height: 450px;
-  background-color: brown;
+  background-image: url(../assets/pitch.jpg);
+  background-size: cover;
   margin-top: 35px;
   display: flex;
   justify-content: center;
@@ -69,6 +74,8 @@ body {
 
 /* TEST COLOR */
 
-.test {
-  background-color:white;
+.football {
+  background-image: url(../assets/football.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }

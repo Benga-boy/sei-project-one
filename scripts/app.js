@@ -6,17 +6,14 @@ function init() {
   const cells = []
   let fields = document.querySelectorAll('.grid div')
 
-  
- 
- 
-
   // GRID VARIABLES
   const width = 7
   const cellCount = width * 6
 
-  // PLAYER VARIABLES
-  // const player = 0
-  // const pc = 0
+  // PLAYER CHOICE VARIABLES
+  // * I want a player to be able to select between two teams, depending on who the player picks, the computer automatically picks opposite
+  let player
+  
 
 
   //FUNCTIONS
@@ -26,12 +23,9 @@ function init() {
       grids.appendChild(cell)
       cell.textContent = i
       cells.push(cell)
-      // cells.forEach(cell => {
-      //   cell.classList.add('field')
-      // })
     }
   }
-  // * Function to start the game
+  // * Function to start the games
   function gameStart() {
     console.log('start game')
     startBtn.classList.add('hidden')
@@ -39,19 +33,26 @@ function init() {
 
   // * Team selection function
   function teamSelect(event){
-    const arsenal = event.target.value
-    const tottenham = event.target.value
+    if (event.target.value === 'arsenal'){
+      player = 'arsenal'
+    } else {
+      player = 'tottenham'
+    }
   }
 
   //Function when hovering over Divs
-  function hoverBoard(event) {
-    // console.log('works', event.target.textContent)
-    fields = event.target.classList.add('test')
-    // console.log(fields.textContent)
+  function hoverBoardArsenal(event) {
+    fields = event.target.classList.add('football')
   }
 
-  function hoverOut(event) {
-    fields = event.target.classList.remove('test')
+  function hoverOutArsenal(event) {
+    fields = event.target.classList.remove('football')
+  }
+
+  // ON CLICK
+
+  function onCellClick(event) {
+    fields = event.target.classList.add(player)
   }
 
   // EVENT LISTENERS
@@ -60,12 +61,9 @@ function init() {
     btn.addEventListener('click', teamSelect)
   })
 
-  grids.addEventListener('mouseover', hoverBoard)
-  grids.addEventListener('mouseout', hoverOut)
-
-  // fields.forEach(field =>{
-  //   field.addEventListener('mouseover', hoverBoard)
-  // })
+  grids.addEventListener('mouseover',  hoverBoardArsenal)
+  grids.addEventListener('mouseout', hoverOutArsenal)
+  grids.addEventListener('click', onCellClick)
 
   createCells()
   

@@ -3,7 +3,6 @@ function init() {
   const grids = document.querySelector('.grid')
   const startBtn = document.querySelector('#start')
   const curPlayer = document.querySelector('#current-player')
-  let fields = document.querySelectorAll('.grid div')
 
   // PLAYER CHOICE VARIABLES
   // * Assigns team values to player 1 and player 2
@@ -17,14 +16,7 @@ function init() {
   const player1 = new Player('arsenal')
   const player2 = new Player('spurs')
 
-  let currentPlayer
-
-  if (curPlayer.textContent === 'arsenal') {
-    currentPlayer = 'arsenal'
-  } else {
-    currentPlayer = 'tottenham'
-  }
-
+  const currentPlayer = player1
 
   // FUNCTIONS
   class Grid {
@@ -34,26 +26,30 @@ function init() {
       for (let i = 0; i < this.grid.length; i++){
         this.grid[i] = new Array(itemsInRows)
       }
-      this.grid.forEach(row => {
+      this.grid.forEach((row, index) => {
         for (let i = 0; i < row.length; i++){
           row[i] = document.createElement('div')
+          row[i].setAttribute('x', index)
+          row[i].setAttribute('y', i)
           row[i].textContent = i + 'a'
           grids.appendChild(row[i])
         } 
       })
 
     }
-    addValue(x, y, player){
-      if (this.grid[x]  && this.grid[x][y]){
-        console.log('The slot is already occupied')
+    addValue(x, y){
+      if (this.grid[x][y].classList.contains('arsenal') || this.grid[x][y].classList.contains('tottenham')){
+        alert('The slot is already occupied')
         return
-      } else if (x > 0 && this.grid[x - 1][y] === undefined) {
-        console.log('The slot below isnt empty')
+      } else if (!this.grid[x + 1][y].classList.contains('arsenal') || !this.grid[x + 1][y].classList.contains('tottenham') ) {
+        alert('The slot below isnt empty')
         return
       } else {
-        this.grid[x][y].classList.add(currentPlayer)
-        player.plays++
-      }
+        this.grid[x][y].classList.add(currentPlayer.team)
+        currentPlayer.plays++
+        currentPlayer === player1 ? player2 : player1
+        curPlayer.textContent = currentPlayer
+      } 
     }
   }
 
@@ -71,19 +67,27 @@ function init() {
 
   //Function when hovering over the grids
   function hoverBoard(event) {
-    fields = event.target.classList.add('football')
+    event.target.classList.add('football')
   }
 
   function hoverOut(event) {
-    fields = event.target.classList.remove('football')
+    event.target.classList.remove('football')
   }
 
   // Function to add team logo to board
 
   function onCellClick(event) {
-    fields = event.target.classList.add(currentPlayer) 
-    console.log(fields.indexOf())
-    // - added from player choice variable depending on team selection
+    // if (event.target.classList.contains('arsenal') || event.target.classList.contains('tottenham')){
+    //   alert('invalid move')
+    // } else {
+    //   event.target.classList.add(currentPlayer.team) 
+    const xCord = parseInt(event.target.getAttribute('x')) 
+    const yCord = parseInt(event.target.getAttribute('y')) 
+    gridCreator.addValue(xCord, yCord)
+    
+ 
+    // console.log(fields)
+    // console.log(event)
   }
 
   // EVENT LISTENERS

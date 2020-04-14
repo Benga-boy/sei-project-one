@@ -5,6 +5,9 @@ function init() {
   const teamBtns = document.querySelectorAll('.team-button')
   const cells = []
   let fields = document.querySelectorAll('.grid div')
+  const curPlayer = document.querySelector('#current-player')
+  const player1Score = document.querySelector('#player1-score')
+  const player2Score = document.querySelector('#player2-score')
 
   // GRID VARIABLES
   const width = 7
@@ -12,7 +15,8 @@ function init() {
 
   // PLAYER CHOICE VARIABLES
   // * Allows player to pick which team they want to be. Choice will be added fields class
-  let player
+  let player1
+  let player2
   
 
 
@@ -27,6 +31,8 @@ function init() {
     }
   }
 
+  // * Function for checking if a div has already been taking
+
   // * Function to start the games
   function gameStart() {
     console.log('start game')
@@ -36,9 +42,9 @@ function init() {
   // * Team selection function
   function teamSelect(event){
     if (event.target.value === 'arsenal'){
-      player = 'arsenal'
+      player1 = 'arsenal'
     } else {
-      player = 'tottenham'
+      player2 = 'tottenham'
     }
   }
 
@@ -54,7 +60,7 @@ function init() {
   // Function to add team logo to board
 
   function onCellClick(event) {
-    fields = event.target.classList.add(player)  // - added from player choice variable depending on team selection
+    fields = event.target.classList.add(player1 || player2)  // - added from player choice variable depending on team selection
   }
 
   // EVENT LISTENERS

@@ -5,10 +5,15 @@
 body {
   height: 100vh;
   margin: 0;
+  background-image: url(../assets/stadium\ 2.jpeg)
 }
 
 label {
   color: #ff1e56;
+}
+
+.word {
+  color: #ffffff;
 }
 
 .hidden{
@@ -17,7 +22,8 @@ label {
 
 .controls-box {
   display: flex;
-  background-color: aqua;
+  color: #ffffff;
+  background-color:#552244;
   justify-content: space-evenly;
   height: 70px;
   align-items: center;
@@ -26,7 +32,7 @@ label {
 .grid-box{
   margin: auto;
   height: 450px;
-  background-image: url(../assets/pitch.jpg);
+  background-color: #000000;
   background-size: cover;
   margin-top: 35px;
   display: flex;
@@ -35,35 +41,36 @@ label {
 
 .grid {
   /* background-color: chartreuse; */
-  height: 305px;
-  width: 462px;
+  height: 335px;
+  width: 490px;
   display: flex;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  border: 6px solid greenyellow;
   /* justify-content: center; */
   /* flex-wrap: wrap; */
   /* align-items: center; */
 }
 
 .grid div{
-  border: 2px solid white;
+  border: 3px solid #ff0000;
   border-radius: 20%;
   flex-grow: 1;
   width: 66px;
   height: 50px;
 }
 
-.grid div.arsenal{
-  background-image: url(../assets/Arsenal\ logo.jpg);
-  background-size: contain;
+.grid div.Arsenal{
+  background-image: url(../assets/arsenal.jpeg);
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
-.grid div.tottenham{
-  background-image: url(../assets/Tottenham\ logo.jpg);
-  background-size: contain;
+.grid div.Spurs{
+  background-image: url(../assets/spurs.png);
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -72,10 +79,28 @@ label {
 }
 
 
-/* TEST COLOR */
+/* Set Attribute Class to move my football on the grid */
 
-.football {
+[showFootball='true'] {
   background-image: url(../assets/football.png);
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+/* BUTTON */
+button {
+	box-shadow:inset 7px -4px 27px 8px #f29c93;
+	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+	background-color:#fe1a00;
+	border-radius:3px;
+	border:3px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:6px 36px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
 }

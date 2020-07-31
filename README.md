@@ -1,4 +1,6 @@
-# sei-project-one
+# sei-project-one - CONNECT 4 GAME
+
+## Deployed Project: https://bit.ly/31Z1cv8
 
 ## Technologies - HTML, CSS & JAVASCRIPT
 
@@ -18,22 +20,27 @@ I then used the DOM once again to add team selectors for each player to choose a
 
 My first few days have been plain sailing, I have been able to replicate a lot of the things I learned in class and things are looking good.
 
-I watched a few YouTube videos to get inspiration for my game logic, one especially from an ex GA student who made a video of how she went about making her game Link - https://www.youtube.com/watch?v=dBlSiGOFjUY&t=285s
+I watched a few YouTube videos to get inspiration for my game logic, one especially from an ex GA student who made a video of how she went about making her game Link - https://www.youtube.com/watch?v=dBlSiGOFjUY&t=285s. I didnt end up going down the same route she did but it was good to see and inspiring
+
+## DAY TWO - 
+
+Kept coding and working on building the grid for my game, whilst doing more research on how to tackle the game logic but didnt find much online. Guess its not a very popular game
 
 ## DAY 3
 
 Day three and it is now time to start writing code for my game logic. Where do I start ? 🤔
 
-I honestly did not have a clue where to start with the game logic so I approached my brother who is also a Developer and he suggested I focused on using classes to build my game in order to get used to object-oriented programming. This still meant nothing to me. 
+I tried a few different methods to write the game logic to no avail. I kept on going however and doing research onine but once again there wasnt much out there. 
+I then spoke with my brother who was a Developer himself in the past. He assured me not to worry too much and advised restarting the whole project using a Class based component in order to get used to OOP, which is what is mostly used in the real world.
 
-Day three became day one and I now only have 4 days left before the project is due. 
+I was excited, especially after hearing that this was used a lot in the real world. I did a lot of reading on Medium, watched YouTube videos and referred back to my lecture workshops to help me gain a better understanding on how to get started. 
 
-I had a rough idea of what classes were but not in full detail so I decided to do some reading on Medium and watched some YouTube videos. I also referred back to workshops we had done in class. 
+This whole experience will go on to serve the future me well when using React for example which is based a lot around Classes and I was happy things went the way they did in the end.
 
 ## BACK TO DAY ONE
-I started my project all over again on the eve of the third day, even with the time constraints. I started off with building my grid now using a 2d array, I was excited as speaking with some of my classmates, I was the only one using a 2d array to build my grid. I knew this will be difficult but I was going to learn a lot. 
+I started my project all over again on the eve of the third day, even with the time constraints with only having another 3 to 4 days left. I started off with building my grid now using a 2d array based on the advice of my brother who also advised on using Classes as thats what is used in real world environment. I was excited as speaking with some of my classmates, I was the only one using a 2d array to build my grid. I knew this will be difficult but I was going to learn a lot during my research process. 
 
-Building the grid once again was straight forward using a class, I was amazed at how straight forward this was using just the new and Array keywords. 
+Building the grid once again was pretty straight forward using a Class, I was amazed at how quick this was using just the new and Array keywords. 
 ```
   class Grid {
     constructor(rows, cols) {
@@ -84,7 +91,7 @@ I had another plain sailing 24 hours and I was happy to have a grid, a ball that
 ```
 
 ## REST OF THE WEEK
-However I struggled to access the grids in order to be able to display the current player. After multiple attempts I figured that my biggest mistake was not console logging , a rookie mistake that will go on to shape the rest of my time on the course and career.
+However I struggled to access the grids in order to be able to display the current player. After multiple attempts I figured that my biggest mistake was not console logging, a rookie mistake that will go on to shape the rest of my time on the course and career.
 
 I finally figured out by the fifth day how classes and constructuctors work. I was also happy with being able to place player counters on the board and displaying who the current player is, so that they know it was their turn. 
 

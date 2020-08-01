@@ -81,6 +81,8 @@ Building the grid once again was pretty straight forward using a Class, I was am
   }
 ```
 
+![my screenshot](readme-images/connect4grid.png)
+
 I had another plain sailing 24 hours and I was happy to have a grid, a ball that hovers through the grid and to be able to place counters on the the board.
 
 ```
@@ -176,6 +178,8 @@ I just now had to right the game logic, I was already at this stage on the third
     return 'Draw'
   }
 ```
+
+![my screenshot](readme-images/winninglogic.png)
 
 My game is now working properly and fully functioning by the last day and I am happy with it. All thats left to do is to add some styling to it.
 

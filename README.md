@@ -2,7 +2,9 @@
 
 ## Deployed Project: https://bit.ly/31Z1cv8
 
-## Technologies - HTML, CSS & JAVASCRIPT
+# Technologies - 
+
+## HTML, CSS & JAVASCRIPT
 
 ## OBJECTIVE - 
 Connect 4 Game - I have seven days to complete this project
@@ -26,7 +28,7 @@ I watched a few YouTube videos to get inspiration for my game logic, one especia
 
 Kept coding and working on building the grid for my game, whilst doing more research on how to tackle the game logic but didnt find much online. Guess its not a very popular game
 
-## DAY 3
+## DAY THREE
 
 Day three and it is now time to start writing code for my game logic. Where do I start ? 🤔
 
